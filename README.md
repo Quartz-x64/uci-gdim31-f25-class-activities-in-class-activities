@@ -1,7 +1,7 @@
 # in-class-activities
 ## Devlogs
 ### W1
-Hello World.
+When I moved the Camera GameObject off of the Cat GameObject, the camera stopped moving with the cat. This is because the Camera was moving with the cat because of the parent-child relationship, where the cat parent GameObject was carrying the camera child GameObject.
 
 ### W2
 Create future Devlog sub-headers with the three # symbols, then write your Devlogs below them.
