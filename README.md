@@ -5,7 +5,9 @@ When I moved the Camera GameObject off of the Cat GameObject, the camera stopped
 https://quartz-x64.itch.io/w1
 
 ### W2
-Create future Devlog sub-headers with the three # symbols, then write your Devlogs below them.
+r, g, and b variables are not true or false questions, so they're not bool. They are not names or dialogues, so they're not string. They can be decimal, so they are float but not int.
+_bounce variable is not true or false question, so it's not bool. It's not name or dialogue, so it's not string. It can be integer but cannot be decimal, so it's int but not float.
+Its semicolon is missing.
 
 ## Open-Source Assets
 ### W1
