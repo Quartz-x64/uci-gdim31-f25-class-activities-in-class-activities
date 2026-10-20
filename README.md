@@ -26,6 +26,11 @@ DidPlayerHitBeat
 2.A class is like a blueprint for a Component: it describes what each instance can be and do. Member variables are its traits, while methods are the actions it can perform. Each Component made from the class has its own trait values.
 3.Each fast bounce multiplies the ball’s current color by 1.5, so the brightness grows exponentially instead of resetting. After many bounces, the color values can exceed their normal range, making the balls look extremely bright, especially with HDR or Bloom enabled.
 
+### W4
+I added Rigidbody components to the Cat and the SoccerBall. The Cat needs one so its jump force works and it can collide with the ball and walls. The ball needs one so it can respond to the Cat’s kick and bounce off the walls.
+I checked Is Trigger only on the Goal’s BoxCollider. That lets the game detect when the ball enters the goal area while allowing the ball to pass through. The Cat’s CapsuleCollider and the SoccerBall’s SphereCollider remain solid so they can collide with walls and each other.
+The Cat fell over after adding its Rigidbody, I freeze its rotation on the X and Z axes in Rigidbody Constraints. I also check that CatW4’s Rigidbody field references the Cat’s Rigidbody; if it still shows None, jumping may cause an error or fail.
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
