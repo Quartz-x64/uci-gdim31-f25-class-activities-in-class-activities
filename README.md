@@ -31,6 +31,16 @@ I added Rigidbody components to the Cat and the SoccerBall. The Cat needs one so
 I checked Is Trigger only on the Goal’s BoxCollider. That lets the game detect when the ball enters the goal area while allowing the ball to pass through. The Cat’s CapsuleCollider and the SoccerBall’s SphereCollider remain solid so they can collide with walls and each other.
 The Cat fell over after adding its Rigidbody, I freeze its rotation on the X and Z axes in Rigidbody Constraints. I also check that CatW4’s Rigidbody field references the Cat’s Rigidbody; if it still shows None, jumping may cause an error or fail.
 
+### W6
+1.
+_target: a Transform marked with [SerializeField], so I can assign the GameObject the deer should walk towards in the Inspector.
+_navMeshAgent: a NavMeshAgent reference. The script gets this component from the Deer GameObject with GetComponent<NavMeshAgent>().
+2.
+Use Unity’s Start() method, which runs when the game begins. No custom method or Update() loop is needed for this task.
+3.
+In Start(), get the Deer’s NavMeshAgent component.
+If _target is assigned, call _navMeshAgent.SetDestination(_target.position) to tell the deer where to walk.
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
