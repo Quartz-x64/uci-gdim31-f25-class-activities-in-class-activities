@@ -41,6 +41,9 @@ Use Unity’s Start() method, which runs when the game begins. No custom method 
 In Start(), get the Deer’s NavMeshAgent component.
 If _target is assigned, call _navMeshAgent.SetDestination(_target.position) to tell the deer where to walk.
 
+### W8
+The Step 2 line moves the Muskrat along the world’s forward direction. It ignores which way the Muskrat is facing. Vector3.forward is always (0, 0, 1), the world’s Z axis. It doesn’t change when the Muskrat turns. After Step 1, pressing left/right rotates the Muskrat, but up/down would still push it along world Z. Turn it 90° to face sideways, press “forward”, and it slides sideways instead of walking where it’s looking.
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
