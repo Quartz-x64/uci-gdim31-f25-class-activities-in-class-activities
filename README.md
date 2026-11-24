@@ -44,6 +44,18 @@ If _target is assigned, call _navMeshAgent.SetDestination(_target.position) to t
 ### W8
 The Step 2 line moves the Muskrat along the world’s forward direction. It ignores which way the Muskrat is facing. Vector3.forward is always (0, 0, 1), the world’s Z axis. It doesn’t change when the Muskrat turns. After Step 1, pressing left/right rotates the Muskrat, but up/down would still push it along world Z. Turn it 90° to face sideways, press “forward”, and it slides sideways instead of walking where it’s looking.
 
+### W9
+Sorting Out the Project Structure
+1. Player. GameObject: Player. Components: Transform, Sprite Renderer, Rigidbody2D, Collider2D. Scripts: PlayerMovement.cs. Function: This is the character you control. It handles movement and interacting with other objects.
+2. Enemy. GameObject: Enemy. Components: Transform, Sprite Renderer, Rigidbody2D, Collider2D. Scripts: EnemyMovement.cs. Function: The enemy moves around the level, and something happens when it runs into the player.
+3. Collectibles. GameObject: Collectible. Components: Transform, Sprite Renderer, Collider2D. Scripts: Collectible.cs. Function: Items you can pick up. The player collects one by touching it.
+4. Game Manager. GameObject: GameManager. Components: GameManager.cs. References: Player and Collectibles. Function: This is the "brain" of the game. It manages the game state and keeps track of the score.
+5. UI. GameObject: Canvas. Components: Text, Button. Scripts: ScoreDisplay.cs. Function: Shows the score and other game info on screen.
+6. Interactions: PlayerMovement handles how the player moves; The player interacts with enemies and collectibles through collisions; When a collectible gets picked up, it tells the GameManager; The GameManager then updates the score; The UI shows the new score.
+7. References and Lists
+I also wanted to write down how things reference each other: GameManager holds a reference to the Player; There are a lot of collectibles, so GameManager can keep them in a List; UI references GameManager so it can get the score and display it.
+That's the basic plan. Next I'm going to write the scripts, get the game running, and then see what needs to change.
+
 ## Open-Source Assets
 ### W1
 - Animals: https://assetstore.unity.com/packages/3d/characters/animals/animals-free-animated-low-poly-3d-models-260727 
